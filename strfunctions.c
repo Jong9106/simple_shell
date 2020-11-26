@@ -63,7 +63,7 @@ char *_strdup(char *str)
 /**
  * _strcmp - to compare two string
  * @s1: value waited from the main
- * @s1: source to be compare
+ * @s2: source to be compare
  * Return: 0 for same string o entry string
  */
 
