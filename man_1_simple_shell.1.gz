@@ -1,0 +1,128 @@
+." Process this file with
+." groff -man -Tascii test_script.1
+."
+.TH simple_shell "1" "November 2020" "Holberton School CH13" "User Commands"
+
+.SH NAME
+.B simple_shell
+- command interpreter
+
+.SH SYNOPSIS
+.B shell
+\fR[\fIcommand_file\fR] \fR[argument ...\fR]
+.br
+
+.SH DESCRIPTION
+.PP
+This simple shell is an interface that is command line interpreter layers. It is used to manipulate system's own and external files and programs. This man page is not intended to be a tutorial or a complete specification of the shell.
+
+.SS Return value
+In successful return, these functions return the number of characters \fB(nbytes)\fP
+printed (excluding the null byte used to end output to strings)
+
+.SH Argument List Processing
+
+.PP
+All of the single letter options that have a corresponding name can be used as an argument to the -o option. 
+The set -o name is provided next to the single letter option in the description below.  Specifying a dash "-" turns the option on, while using a plus + disables the option.  The following options can be set from the command line or with the set builtin (described later).
+
+.PP
+.PP
+
+.SH EXAMPLE
+
+.PP
+Iteractive mode:
+.br
+Execute the simple_shell file, then you will be inside the minishell
+
+.nf
+$ ./simple_shell
+ minishell :
+ minishell : ls
+ built-in.c header.h ctrl_c.c minishell.c splits_string.c
+ exec.c sfree.c string_directory.c 
+ minishell : /bin/ls
+ built-in.c header.h ctrl_c.c minishell.c splits_string.c
+ exec.c sfree.c string_directory.c 
+
+.PP
+Non/interactive
+.br
+Write echo and between doble quotes " " put the command to execute and after the pipeline | execute the simple_shell file
+
+.nf
+$ echo "ls" | ./simple_shell  minishell : built-in.c header.h ctrl_c.c minishell.c splits_string.c exec.c sfree.c string_directory.c
+
+.SH REPORTING BUGS
+.PP
+After entering a command that does not exist, the program cannot be closed with ctrl + D.
+If you write a command too quickly without letting the previous one finish, it doesn't read the first argument of the next command, and you have to hit enter to be able to use the shell again.
+Please reffer to someone of the colaborators in this project, or be free to send us a mail to cisfun.com
+
+.PP
+ 
+
+.SH EXIT STATUS
+.TP
+.B
+98
+when write exit 98.
+
+.TP
+.B
+0
+If the last command value before exit was 0 (success).
+
+.TP
+.B
+2
+if the directory before exit was invalid.
+
+.TP
+.B
+127
+If the last command before exit was non existed.
+
+
+
+.SH SEE ALSO
+.BR https://www.holberton.com
+.PP
+.B Full project documentation based on a project to emulate a copy of printf with formater specifiers
+
+
+.SH COPYRIGHT
+.PP
+Copyright 2020 HolbertonSchool. CH13.
+.PP 
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+https://www.cisfun.com
+
+
+.SH CREDITS
+.PP
+Holberton School - Cohort 13
+.TP
+Project AUTHORS:
+
+.PP
+.B
+Juan Carlos Hernandez-https://github.com/Jong9106
+
+.PP
+.B
+Diego Fernando Ahumada-https://www.github.com/Xvaria
+
+.SH
+.PP
+
